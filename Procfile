@@ -1,1 +1,1 @@
-worker: nodemon server.js
+worker: node -r esm src/server.js
