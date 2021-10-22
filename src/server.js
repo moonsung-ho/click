@@ -12,7 +12,6 @@ app.get('/', (req, res) => res.render('index.html'));
 app.get('/*', (req, res) => res.redirect('/'));
 const handleListen = () => console.log('Listening on http://localhost:3000');
 const server = http.createServer(app);
-
 const wss = new WebSocket.Server({ server });
 let score = 0
 const sockets = [];
