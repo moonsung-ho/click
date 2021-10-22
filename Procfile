@@ -1,1 +1,1 @@
-worker: nodemon server.js
+worker: ./node_modules/.bin/nodemon /src/server.js.

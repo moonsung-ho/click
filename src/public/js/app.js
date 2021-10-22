@@ -5,15 +5,12 @@ let count = 1
 
 
 
-socket.addEventListener('open', () => {
-    console.log('connected');
-});
 socket.addEventListener('message', (message) => {
     const score = document.querySelector("#score")
     score.innerHTML = `🌍  전 세계 &nbsp:&nbsp ${message.data}`;
 });
 socket.addEventListener('close', () => {
-    console.log('disconnected');
+    alert("서버 에러")
 });
 button.addEventListener("click", () => {
     socket.send("ddd")
