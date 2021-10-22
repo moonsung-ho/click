@@ -30,4 +30,4 @@ wss.on('connection', (socket) => {
   });
 });
 
-server.listen(3000, handleListen);
+server.listen(process.env.PORT || 8080, handleListen);

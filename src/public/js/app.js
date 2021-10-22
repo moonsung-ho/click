@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://' + window.location.host);
+const socket = new WebSocket('wss://' + window.location.host);
 const button = document.querySelector("a")
 const session = document.querySelector("h1")
 let count = 1
