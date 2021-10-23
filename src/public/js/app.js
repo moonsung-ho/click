@@ -6,7 +6,7 @@ function makeSocket() {
     }
     return socket
 }
-var socket = makeSocket()
+let socket = makeSocket()
 const button = document.querySelector("a")
 const session = document.querySelector("h1")
 const popsound = document.querySelector("audio")
@@ -19,7 +19,7 @@ socket.addEventListener('message', (message) => {
     score.innerHTML = `🌍  전 세계 &nbsp:&nbsp ${message.data}`;
 });
 socket.addEventListener('close', () => {
-    var socket = makeSocket()
+    socket = makeSocket()
     alert("서버 에러")
 });
 button.addEventListener("click", () => {
@@ -27,6 +27,7 @@ button.addEventListener("click", () => {
     session.innerText = count++
     popsound.volume = 0.5
     popsound.play()
+    localStorage.setItem("click", count)
 })
 window.onkeyup = () => {
     button.click()
