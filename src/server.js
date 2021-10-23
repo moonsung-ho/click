@@ -17,16 +17,16 @@ let score = 0
 const sockets = [];
 
 wss.on('connection', (socket) => {
-  sockets.push(socket);
-  socket.on('close', () => {
-    console.log('disconnected');
-  });
-  socket.send(score)
-  console.log('connected');
-  socket.on('message', (message) => {
-    score++
-    sockets.forEach((aSocket) => aSocket.send(score));
-  });
+    sockets.push(socket);
+    socket.on('close', () => {
+        console.log('disconnected');
+    });
+    socket.send(score)
+    console.log('connected');
+    socket.on('message', (message) => {
+        score++
+        sockets.forEach((aSocket) => aSocket.send(score));
+    });
 });
 
-server.listen(process.env.PORT || 8080, handleListen);
+server.listen(process.env.PORT || 3000, handleListen);
