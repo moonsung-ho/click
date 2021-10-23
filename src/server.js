@@ -1,7 +1,6 @@
 const http = require("http")
 const express = require("express")
 const WebSocket = require("ws")
-
 const app = express();
 
 app.set('view engine', 'ejs');
